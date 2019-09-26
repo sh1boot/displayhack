@@ -1,0 +1,59 @@
+something I haven't bothered to name properly -- by me.
+
+source code: <http://bovine.muck.net.nz/users/gumboot/displayhack.tgz>
+
+There is no Windows installer.  If you have a zip file, extract everything
+somewhere and run it from there.  Drag a link to somewhere else if that's what
+you're into.  You can also rename the executable to SCRNHACK.SCR and copy it
+and the DLL and the pal directory into C:\WINDOWS\system32 (or similar) and use
+it as a screensaver.  It's not terribly reliable that way, though.
+
+Much of the code is just the quickest thing I could think of to type to stick
+it all together, and modifications on that to make it work under whichever
+platform I found myself in front of when I got bored enough to have another
+play.  Some of that code has been tidied up, but at different times with
+whichever indentation and capitalisation rules I follewed at the time.  Some of
+the code is hand-optimised for obsolete CPUs.  Some of the code (the TV grabber
+code) was stolen and tweaked.
+
+Several palettes are lifted from fractint.  Several more are lifted from an old
+DOS version of Cthugha (1997ish I think, I wonder if those are still
+distributed with it), but I think those were lifted from fractint too.  One is
+from XaoS.  The files are plain text,  Lines of 'index, red, green, blue' all
+ranging from 0 to 255.  The indices must be in ascending order.
+
+I have no idea how reliably the win32 version works.  It's very hard for me to
+test because I don't have my own win32 platform.  If you get an error regarding
+MSVCRT.DLL, go to
+	http://support.microsoft.com/support/kb/articles/Q259/4/03.ASP
+and download and install VC6RedistSetup_enu.exe (or similar) via the link
+there.  I think that only applies to Win95 users.
+
+
+Keyboard: (this is bound to be out of date, refer to displayhack.c)
+
+	enter	allow/disallow automatic twiddling of parameters
+	a	print the command line arguments needed to get this mode
+	f	toggle fullscreen mode
+	c	change colours
+	w	change distortion thingumy
+	b	change decay rate
+	s	change seed
+	p	save a snapshot
+	r	change working resolution
+	tab	random change now
+
+Command line: (as above, but refer to several different files)
+	-geometry 123x456  set the window dimensions to 123 wide and 456 tall
+	-width 123	set the buffer width to 123 pixels
+	-height 456	set the buffer height to 456 pixels
+	-fullscreen	start with a fullscreen display
+	-scale		allow window resizing
+	-yuvscale	use YUV overlay window resizing
+	-singlebuf
+	-swpalette
+	-swsurface	things for SDL that may help if there are problems
+	-windowid 123	try to draw in window ID 123
+	-static		don't change things automatically
+
+

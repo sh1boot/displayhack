@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -n "${EDITOR:=$VISUAL}" ] || EDITOR="`which editor`" || EDITOR="`which vi`" || EDITOR="`which ed`" || EDITOR="echo Please edit"
+exec $EDITOR Makefile
